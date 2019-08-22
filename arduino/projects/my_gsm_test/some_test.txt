@@ -1,0 +1,14 @@
+#include <SoftwareSerial.h>
+
+#define RX_PIN 5
+#define TX_PIN 4  
+#define RESET_PIN 2
+
+String buffer;
+
+SoftwareSerial SIM(RX_PIN, TX_PIN); //Initiate bit banging UART
+
+void begin(){
+  SIM.begin(9600); 
+  buffer.reserve(255); //reserve memory to prevent intern fragmention
+}
